@@ -1,0 +1,8 @@
+<script>start("c:\\Users\\USER\\Documents\\scholarship-api\\scholarshipfinder\\");</script>
+<script>onHasParentDirectory();</script>
+<script>addRow("venv","venv",1,0,"0 B",1742011121,"3/15/25, 9:43:41 AM");</script>
+<script>addRow("app.py","app.py",0,656,"656 B",1742012076,"3/15/25, 9:59:36 AM");</script>
+<script>addRow("config.py","config.py",0,0,"0 B",1742011413,"3/15/25, 9:48:33 AM");</script>
+<script>addRow("models.py","models.py",0,527,"527 B",1742012094,"3/15/25, 9:59:54 AM");</script>
+<script>addRow("requirements.txt","requirements.txt",0,31,"31 B",1742011883,"3/15/25, 9:56:23 AM");</script>
+<script>addRow("resources.py","resources.py",0,3660,"3.6 kB",1742012094,"3/15/25, 9:59:54 AM");</script>

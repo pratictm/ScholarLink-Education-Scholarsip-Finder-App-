@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scholarships - Scholarship Finder Nepal</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/scholarships.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <h1>ScholarNepal</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="scholarships.html" class="active">Scholarships</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="auth-buttons">
+                <a href="login.html" class="btn btn-outline">Login</a>
+                <a href="signup.html" class="btn btn-primary">Sign Up</a>
+            </div>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="scholarship-header">
+            <h1>Find Your Perfect Scholarship</h1>
+            <p>Browse through our comprehensive database of scholarships available for Nepali students</p>
+        </section>
+
+        <section class="search-section">
+            <div class="search-container">
+                <div class="search-box">
+                    <input type="text" id="search-input" placeholder="Search scholarships by name, institution, or keyword">
+                    <button id="search-button" class="btn btn-primary">
+                        <i class="fas fa-search"></i> Search
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section class="filter-section">
+            <div class="filter-container">
+                <div class="filter-header">
+                    <h3>Filters</h3>
+                    <button id="clear-filters" class="btn btn-text">Clear All</button>
+                </div>
+                <div class="filter-group">
+                    <h4>Education Level</h4>
+                    <div class="filter-options">
+                        <label class="filter-option">
+                            <input type="checkbox" name="level" value="primary"> Primary School (Grades 1-5)
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" name="level" value="secondary"> Secondary School (Grades 6-10)
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" name="level" value="higher-secondary"> Higher Secondary (Grades 11-12)
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" name="level" value="undergraduate"> Undergraduate
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" name="level" value="postgraduate"> Postgraduate
+                        </label>
+                    </div>
+                </div>
+                <div class="filter-group">
+                    <h4>Scholarship Type</h4>
+                    <div class="filter-options">
+                        <label class="filter-option">
+                            <input type="checkbox" name="type" value="merit"> Merit-based
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" name="type" value="need"> Need-based
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" name="type" value="government"> Government
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" name="type" value="private"> Private
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" name="type" value="international"> International
+                        </label>
+                    </div>
+                </div>
+                <div class="filter-group">
+                    <h4>Amount</h4>
+                    <div class="filter-options">
+                        <label class="filter-option">
+                            <input type="checkbox" name="amount" value="under-50000"> Under NPR 50,000
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" name="amount" value="50000-100000"> NPR 50,000 - 100,000
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" name="amount" value="100000-500000"> NPR 100,000 - 500,000
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" name="amount" value="over-500000"> Over NPR 500,000
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" name="amount" value="full"> Full Scholarship
+                        </label>
+                    </div>
+                </div>
+                <div class="filter-group">
+                    <h4>Deadline</h4>
+                    <div class="filter-options">
+                        <label class="filter-option">
+                            <input type="checkbox" name="deadline" value="1-week"> Within 1 Week
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" name="deadline" value="1-month"> Within 1 Month
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" name="deadline" value="3-months"> Within 3 Months
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" name="deadline" value="no-deadline"> No Deadline
+                        </label>
+                    </div>
+                </div>
+                <button id="apply-filters" class="btn btn-primary btn-block">Apply Filters</button>
+            </div>
+
+            <div class="scholarship-results">
+                <div class="results-header">
+                    <div class="results-count">
+                        <p><span id="scholarship-count">15</span> scholarships found</p>
+                    </div>
+                    <div class="results-sort">
+                        <label for="sort-by">Sort by:</label>
+                        <select id="sort-by">
+                            <option value="relevance">Relevance</option>
+                            <option value="deadline-asc">Deadline (Soonest)</option>
+                            <option value="deadline-desc">Deadline (Latest)</option>
+                            <option value="amount-asc">Amount (Low to High)</option>
+                            <option value="amount-desc">Amount (High to Low)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div id="scholarship-list" class="scholarship-list">
+                    <!-- Scholarship cards will be dynamically generated here -->
+                </div>
+
+                <div class="pagination">
+                    <button class="pagination-btn" disabled><i class="fas fa-chevron-left"></i></button>
+                    <button class="pagination-btn active">1</button>
+                    <button class="pagination-btn">2</button>
+                    <button class="pagination-btn">3</button>
+                    <span class="pagination-ellipsis">...</span>
+                    <button class="pagination-btn">10</button>
+                    <button class="pagination-btn"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+        </section>
+
+        <section class="newsletter">
+            <div class="newsletter-content">
+                <h2>Stay Updated with New Scholarships</h2>
+                <p>Subscribe to our newsletter and never miss a scholarship opportunity</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Enter your email address" required>
+                    <button type="submit" class="btn btn-primary">Subscribe</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <h2>ScholarNepal</h2>
+                <p>Connecting Nepali students with scholarship opportunities</p>
+            </div>
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="scholarships.html">Scholarships</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="#">Scholarship Guide</a></li>
+                        <li><a href="#">Application Tips</a></li>
+                        <li><a href="#">Success Stories</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <ul>
+                        <li><a href="mailto:info@scholarnepal.com">info@scholarnepal.com</a></li>
+                        <li><a href="tel:+9771234567">+977 1234567</a></li>
+                        <li>Kathmandu, Nepal</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 ScholarNepal. All rights reserved.</p>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="scripts/main.js"></script>
+    <script src="scripts/scholarships.js"></script>
+</body>
+</html>
+
